@@ -2,7 +2,7 @@ package com.example.skillshareplus.controller;
 
 import com.example.skillshareplus.dto.request.LearningPlanRequest;
 import com.example.skillshareplus.dto.request.LearningPlanProgressRequest;
-import com.example.skillshareplus.dto.request.LearningPlanResponse;
+import com.example.skillshareplus.dto.response.LearningPlanResponse;
 import com.example.skillshareplus.security.services.LearningPlanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
