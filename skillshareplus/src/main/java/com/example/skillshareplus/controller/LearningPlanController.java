@@ -1,6 +1,6 @@
 package com.example.skillshareplus.controller;
 
-import com.skillshareplus.dto.request.LearningPlanProgressRequest;
+import com.example.skillshareplus.dto.request.LearningPlanRequest;
 import com.skillshareplus.dto.request.LearningPlanRequest;
 import com.skillshareplus.dto.response.LearningPlanResponse;
 import com.skillshareplus.security.services.LearningPlanService;
