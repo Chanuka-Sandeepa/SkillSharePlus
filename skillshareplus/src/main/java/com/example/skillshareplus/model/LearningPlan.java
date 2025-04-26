@@ -1,4 +1,4 @@
-package com.SkillShare.SkillShare.model;
+package com.example.skillshareplus.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
