@@ -1,6 +1,6 @@
 package com.example.skillshareplus.dto.request;
 
-import com.SkillShare.SkillShare.model.*;
+import com.example.skillshareplus.model.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

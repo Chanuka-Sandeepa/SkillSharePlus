@@ -3,7 +3,7 @@ package com.example.skillshareplus.controller;
 import com.example.skillshareplus.dto.request.LearningPlanRequest;
 import com.example.skillshareplus.dto.request.LearningPlanProgressRequest;
 import com.example.skillshareplus.dto.request.LearningPlanResponse;
-import com.skillshareplus.security.services.LearningPlanService;
+import com.example.skillshareplus.security.services.LearningPlanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.example.skillshareplus.dto.response.LearningModuleResponse;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
