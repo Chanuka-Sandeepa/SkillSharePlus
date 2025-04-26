@@ -4,18 +4,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class LearningTask {
+public class LearningModule {
     private String id;
     private String title;
     private String description;
-    private List<Resource> resources = new ArrayList<>();
-    private int estimatedMinutes;
-    private LocalDateTime completedAt;
+    private List<LearningTask> tasks = new ArrayList<>();
+    private int estimatedHours;
+    private int completedHours;
 }
