@@ -1,7 +1,7 @@
 package com.example.skillshareplus.controller;
 
 import com.example.skillshareplus.dto.request.CommentRequest;
-import com.skillshareplus.dto.request.CreatePostRequest;
+import com.example.skillshareplus.dto.request.CreatePostRequest;
 import com.skillshareplus.dto.response.PagedPostsResponse;
 import com.skillshareplus.dto.response.PostResponse;
 import com.skillshareplus.security.services.PostService;
