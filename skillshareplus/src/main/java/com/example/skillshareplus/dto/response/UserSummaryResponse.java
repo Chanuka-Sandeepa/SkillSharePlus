@@ -1,4 +1,4 @@
-package com.SkillShare.SkillShare.dto.response;
+package com.example.skillshareplus.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
