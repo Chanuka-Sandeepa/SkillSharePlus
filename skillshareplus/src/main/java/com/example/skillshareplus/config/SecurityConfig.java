@@ -3,6 +3,7 @@ package com.example.skillshareplus.config;
 import com.example.skillshareplus.security.jwt.AuthTokenFilter;
 import com.example.skillshareplus.security.services.UserDetailsServiceImpl;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,11 +23,16 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
  */
 @Configuration
 @EnableMethodSecurity
-@RequiredArgsConstructor
 public class SecurityConfig {
 
     private final UserDetailsServiceImpl userDetailsService;
     private final AuthTokenFilter authTokenFilter;
+
+    @Autowired
+    public SecurityConfig(UserDetailsServiceImpl userDetailsService, AuthTokenFilter authTokenFilter) {
+        this.userDetailsService = userDetailsService;
+        this.authTokenFilter = authTokenFilter;
+    }
 
     // Bean to provide DaoAuthenticationProvider
     @Bean
