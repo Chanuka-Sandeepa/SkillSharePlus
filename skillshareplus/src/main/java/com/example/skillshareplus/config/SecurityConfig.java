@@ -76,7 +76,20 @@ public class SecurityConfig {
         return authConfig.getAuthenticationManager();
     }
 
-    // Bean to configure password encoder using BCrypt
+    /**
+     * Configures the password encoder for the application.
+     * Uses BCrypt algorithm which:
+     * - Automatically handles salt generation
+     * - Provides strong password hashing
+     * - Is resistant to rainbow table attacks
+     * 
+     * The encoder is used for:
+     * - Password hashing during user registration
+     * - Password verification during login
+     * - Secure password storage
+     *
+     * @return BCryptPasswordEncoder instance
+     */
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
