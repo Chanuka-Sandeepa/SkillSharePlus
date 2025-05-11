@@ -579,4 +579,17 @@ public class LearningPlanService {
                 .map(this::convertToResponse)
                 .collect(Collectors.toList());
     }
+
+    /**
+     * Retrieves learning plans by their category for the current user.
+     * @param category The category to filter learning plans by
+     * @return List of learning plans in the specified category
+     */
+    public List<LearningPlanResponse> getLearningPlansByCategory(String category) {
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+        return learningPlanRepository.findByUserIdAndCategory(userId, category)
+                .stream()
+                .map(this::convertToResponse)
+                .collect(Collectors.toList());
+    }
 }

@@ -65,6 +65,17 @@ public class LearningPlanController {
     }
     
     /**
+     * Retrieves learning plans by their category for the authenticated user.
+     * @param category The category to filter learning plans by (e.g., "Programming", "Web Development")
+     * @return List of learning plans in the specified category
+     */
+    @GetMapping("/category/{category}")
+    public ResponseEntity<List<LearningPlanResponse>> getLearningPlansByCategory(@PathVariable String category) {
+        List<LearningPlanResponse> responses = learningPlanService.getLearningPlansByCategory(category);
+        return ResponseEntity.ok(responses);
+    }
+    
+    /**
      * Updates the progress of a specific learning plan.
      * @param id The unique identifier of the learning plan
      * @param request The progress update details
