@@ -54,6 +54,17 @@ public class LearningPlanController {
     }
     
     /**
+     * Retrieves learning plans by their status for the authenticated user.
+     * @param status The status to filter learning plans by (e.g., "IN_PROGRESS", "COMPLETED", "NOT_STARTED")
+     * @return List of learning plans matching the specified status
+     */
+    @GetMapping("/status/{status}")
+    public ResponseEntity<List<LearningPlanResponse>> getLearningPlansByStatus(@PathVariable String status) {
+        List<LearningPlanResponse> responses = learningPlanService.getLearningPlansByStatus(status);
+        return ResponseEntity.ok(responses);
+    }
+    
+    /**
      * Updates the progress of a specific learning plan.
      * @param id The unique identifier of the learning plan
      * @param request The progress update details

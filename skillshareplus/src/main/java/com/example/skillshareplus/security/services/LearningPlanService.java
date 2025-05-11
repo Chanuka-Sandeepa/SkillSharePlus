@@ -566,4 +566,17 @@ public class LearningPlanService {
         learningPlanRepository.save(javaPlan);
         learningPlanRepository.save(springPlan);
     }
+
+    /**
+     * Retrieves learning plans by their status for the current user.
+     * @param status The status to filter learning plans by
+     * @return List of learning plans matching the specified status
+     */
+    public List<LearningPlanResponse> getLearningPlansByStatus(String status) {
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+        return learningPlanRepository.findByUserIdAndStatus(userId, status)
+                .stream()
+                .map(this::convertToResponse)
+                .collect(Collectors.toList());
+    }
 }
