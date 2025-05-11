@@ -55,7 +55,21 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    // Bean to configure the SecurityFilterChain
+    /**
+     * Configures the security filter chain for the application.
+     * Sets up:
+     * - CSRF protection (disabled for JWT)
+     * - Stateless session management
+     * - Endpoint access rules:
+     *   - Public access to /api/auth/**
+     *   - Admin-only access to /api/admin/**
+     *   - Authenticated access for all other endpoints
+     * - JWT token filter integration
+     *
+     * @param http HttpSecurity object to configure
+     * @return Configured SecurityFilterChain
+     * @throws Exception if configuration fails
+     */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf().disable() // Disable CSRF as we're using JWT for authentication
