@@ -76,6 +76,20 @@ public class LearningPlanController {
     }
     
     /**
+     * Retrieves learning plans within a specified estimated hours range for the authenticated user.
+     * @param minHours The minimum number of estimated hours
+     * @param maxHours The maximum number of estimated hours
+     * @return List of learning plans within the specified time range
+     */
+    @GetMapping("/time-range")
+    public ResponseEntity<List<LearningPlanResponse>> getLearningPlansByTimeRange(
+            @RequestParam int minHours,
+            @RequestParam int maxHours) {
+        List<LearningPlanResponse> responses = learningPlanService.getLearningPlansByTimeRange(minHours, maxHours);
+        return ResponseEntity.ok(responses);
+    }
+    
+    /**
      * Updates the progress of a specific learning plan.
      * @param id The unique identifier of the learning plan
      * @param request The progress update details

@@ -592,4 +592,18 @@ public class LearningPlanService {
                 .map(this::convertToResponse)
                 .collect(Collectors.toList());
     }
+
+    /**
+     * Retrieves learning plans within a specified estimated hours range for the current user.
+     * @param minHours The minimum number of estimated hours
+     * @param maxHours The maximum number of estimated hours
+     * @return List of learning plans within the specified time range
+     */
+    public List<LearningPlanResponse> getLearningPlansByTimeRange(int minHours, int maxHours) {
+        String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+        return learningPlanRepository.findByUserIdAndEstimatedHoursBetween(userId, minHours, maxHours)
+                .stream()
+                .map(this::convertToResponse)
+                .collect(Collectors.toList());
+    }
 }
