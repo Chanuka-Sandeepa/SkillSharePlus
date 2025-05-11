@@ -55,7 +55,22 @@ public class SecurityConfig {
         return authProvider;
     }
 
-    // Bean to configure AuthenticationManager
+    /**
+     * Configures the authentication manager for the application.
+     * The authentication manager is responsible for:
+     * - Processing authentication requests
+     * - Coordinating with the authentication provider
+     * - Managing the authentication process
+     * 
+     * This bean is essential for:
+     * - Login operations
+     * - Token-based authentication
+     * - Security context management
+     *
+     * @param authConfig AuthenticationConfiguration to build the manager
+     * @return Configured AuthenticationManager
+     * @throws Exception if configuration fails
+     */
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
         return authConfig.getAuthenticationManager();
