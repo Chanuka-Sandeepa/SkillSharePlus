@@ -34,7 +34,19 @@ public class SecurityConfig {
         this.authTokenFilter = authTokenFilter;
     }
 
-    // Bean to provide DaoAuthenticationProvider
+    /**
+     * Configures the authentication provider for the application.
+     * Sets up:
+     * - Custom user details service for user lookup
+     * - BCrypt password encoder for secure password handling
+     * 
+     * This provider is responsible for:
+     * - Loading user details during authentication
+     * - Validating passwords using the configured encoder
+     * - Integrating with Spring Security's authentication system
+     *
+     * @return Configured DaoAuthenticationProvider
+     */
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
